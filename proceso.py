@@ -1,13 +1,14 @@
 import random
 
 class Proceso:
-    def _init_(self, id_proceso, env, simulacion):
-        self.id_proceso = id_proceso
+    
+    def __init__ (self, id_proceso, env, simulacion):
+        self.id = id_proceso
         self.env = env
-        self.simulacion = simulacion
+        self.sim = simulacion
 
-        self.memoria_requerida = random.radint(1,10)
-        self.instrucciones_totales = random.radint(1,10)
+        self.memoria_requerida = random.randint(1,10)
+        self.instrucciones_totales = random.randint(1,10)
         self.intrucciones_restantes = self.instrucciones_totales
 
         self.tiempo_llegada = env.now
@@ -31,13 +32,13 @@ class Proceso:
                 self.intrucciones_restantes -= intrucciones
 
             if self.intrucciones_restantes > 0:
-                decision = random.radint(1, 21)
+                decision = random.randint(1, 21)
                 if decision == 1:
                     yield self.env.timeout(1)
 
         self.tiempo_salida = self.env.now
 
-        yield self .sim.ram.put(self.memoria_requerida)
+        yield self.sim.ram.put(self.memoria_requerida)
 
         tiempo_total = self.tiempo_salida - self.tiempo_llegada
         self.sim.tiempos.append(tiempo_total)
