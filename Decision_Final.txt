@@ -1,0 +1,14 @@
+Conclusión y Decisión Final:
+La mejor estrategia para reducir el tiempo promedio de ejecución de los procesos es 
+la Estrategia C: emplear 2 procesadores.
+
+Justificación:
+Aunque tener un procesador el doble de rápido (Estrategia B) mejora el rendimiento individual 
+reduciendo el tiempo a la mitad, no soluciona el problema de encolamiento cuando la llegada 
+de procesos es masiva (intervalo de 1). Por el contrario, agregar un segundo 
+procesador (Estrategia C) introduce el procesamiento paralelo/concurrente.Los datos demuestran 
+que la concurrencia es superior a la velocidad pura en sistemas de tiempo compartido con alta 
+demanda. Mientras que un CPU rápido logró mantener a 200 procesos en un promedio de 
+~55 unidades de tiempo, los 2 CPUs lograron mantener ese mismo estrés en un asombroso 
+promedio de ~10 unidades de tiempo, lo que representa el sistema más eficiente y estable 
+de todos los escenarios evaluados.
